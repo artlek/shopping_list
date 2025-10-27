@@ -1,0 +1,27 @@
+FROM php:8.2-cli
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        zip \
+        unzip \
+        p7zip-full \
+        gzip \
+        tar \
+        xz-utils \
+        unrar-free
+
+RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+
+ADD . /var/www/html
+
+RUN usermod -u 1000 www-data
+RUN usermod -a -G www-data root
+RUN mkdir -p /var/www/html
+RUN chown -R www-data:www-data /var/www/html
+RUN mkdir -p /var/www/html/.composer
+RUN chown -R www-data:www-data /var/www/html/.composer
+RUN chmod -R 777 /var
+
+WORKDIR /var/www/html/
+
+CMD ["sh", "entrypoint.sh"]
+
+EXPOSE 80

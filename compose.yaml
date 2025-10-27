@@ -1,0 +1,26 @@
+ services: 
+  php:
+    container_name: php
+    ports:
+      - 8000:8000
+    build:
+      context: .
+      dockerfile: Dockerfile-php
+    volumes:
+      - ./:/var/www/html
+  vite:
+    container_name: vite
+    build:
+      context: ./vite
+      dockerfile: Dockerfile-vite
+    ports:
+      - 5173:5173
+    depends_on:
+      - php
+    develop:
+      watch:
+        - action: sync
+          path: ./vite
+          target: /app
+          ignore:
+            - node_modules

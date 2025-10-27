@@ -1,0 +1,14 @@
+FROM node:18-alpine
+
+ENV VITE_DOMAIN="localhost"
+ENV VITE_APP_VERSION="1.0.0"
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install --force
+
+EXPOSE 5173
+
+CMD [ "npm", "run", "dev" ]
