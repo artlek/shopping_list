@@ -8,6 +8,10 @@ import { AddShopplistToLocalStorage } from "../services/localStorage";
 import { GetUserName } from '../services/localStorage';
 import Box from '@mui/material/Box';
 import NotificationBar from "./NotificationBar";
+<<<<<<< HEAD
+=======
+import { generateUrl } from "./api/generateUrl";
+>>>>>>> c08c6cc (Add InfoDialog component to inform when new version)
 
 export function AddListForm({ handleClose, setIsLoading }) {
     const [disabledButton, setDisabledButton] = useState(false);
@@ -25,7 +29,11 @@ export function AddListForm({ handleClose, setIsLoading }) {
         };
 
         try {
+<<<<<<< HEAD
             const response = await fetch('api/api/shoppinglists'+'?', {
+=======
+            const response = await fetch(generateUrl('shoppinglists'), {
+>>>>>>> c08c6cc (Add InfoDialog component to inform when new version)
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/ld+json',

@@ -11,7 +11,11 @@ export function AppInfoTable() {
         border: '1px solid',
         borderColor: 'secondary.light',
     }
+<<<<<<< HEAD
     const headStyle = {...cellStyle, fontWeight: 600, color: 'text.primary', minWidth: '100px' };
+=======
+    const headStyle = {...cellStyle, fontWeight: 600, color: 'text.primary', width: '200px' };
+>>>>>>> c08c6cc (Add InfoDialog component to inform when new version)
     const appVersion = GetAppVersion();
 
     return(

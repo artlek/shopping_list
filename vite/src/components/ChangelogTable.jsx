@@ -11,8 +11,13 @@ export function ChangelogTable() {
         {
             version: '1.0.0',
             released: '2025-08-06',
-            content: 'First app version.'
+            content: 'First app version'
         },
+        {
+            version: '1.1.0',
+            released: '2026-01-02',
+            content: 'New dialog has been added informing about the new version of the application'
+        }
     ];
 
     return(
@@ -22,14 +27,15 @@ export function ChangelogTable() {
                     <TableBody>
                         {releases.map((release) => 
                             <TableRow key={release.version}>
-                                <TableCell sx={{
-                                    border: '1px solid',
-                                    borderColor: 'secondary.light',
-                                    verticalAlign: 'top',
-                                    fontWeight: 600, 
-                                    color: 'text.primary', 
-                                    minWidth: '100px'
-                                }}>
+                                <TableCell 
+                                    sx={{
+                                        border: '1px solid',
+                                        borderColor: 'secondary.light',
+                                        verticalAlign: 'top',
+                                        fontWeight: 600, 
+                                        color: 'text.primary', 
+                                        width: '200px'
+                                    }}>
                                     <Box>
                                         <Box component="span" fontWeight="600">Version: {release.version}</Box>
                                     </Box>
@@ -37,12 +43,16 @@ export function ChangelogTable() {
                                         <Box component="span" fontWeight="400">Released: {release.released}</Box>
                                     </Box>
                                 </TableCell>
-                                <TableCell sx={{
-                                    border: '1px solid',
-                                    borderColor: 'secondary.light',
-                                    verticalAlign: 'top',
-                                }}>
-                                    {release.content}
+                                <TableCell 
+                                    sx={{
+                                        border: '1px solid',
+                                        borderColor: 'secondary.light',
+                                        verticalAlign: 'top',
+                                    }}>
+                                    {Array.isArray(release.content) 
+                                        ? release.content.map((item, index) => <Box key={index}>{item}</Box>)
+                                        : release.content
+                                    }
                                 </TableCell>
                             </TableRow>
                             )
