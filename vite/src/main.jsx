@@ -12,7 +12,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<HashRouter>
-            <GlobalStyles styles={{ html: { fontSize: '16px' } }} />
+            <GlobalStyles
+                styles={{
+                    html:{
+                       fontSize: '16px'
+                    }
+                }}
+            />
             <ThemeProvider theme={Theme}>
 				<App />
 			 </ThemeProvider>

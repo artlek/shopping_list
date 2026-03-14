@@ -33,12 +33,33 @@ export default function ListMenu({ handleClickCopy, handleClickShare, handleClic
 
     const listMenu = listMenuItems.map((item) => 
         <React.Fragment key={item.id}>
-            <ListItem sx={{ minWidth: '200px' }} disablePadding>
-                <ListItemButton onClick={item.onClick} sx={{ justifyContent: 'flex-end', px: 3, py: 1.5 }} >
-                    <ListItemIcon sx={{ minWidth: '34px' }}>
+            <ListItem
+                sx={{
+                    minWidth: '200px'
+                }}
+                disablePadding>
+                <ListItemButton
+                    onClick={item.onClick}
+                    sx={{
+                        justifyContent: 'flex-end',
+                        px: 3,
+                        py: 1.5
+                    }}
+                >
+                    <ListItemIcon
+                        sx={{
+                            minWidth: '34px'
+                        }}
+                    >
                         {item.icon}
                     </ListItemIcon>
-                    <ListItemText disableTypography sx={{ fontSize: '1rem' }} primary={item.label} />
+                    <ListItemText
+                        disableTypography
+                            sx={{
+                                fontSize: '1rem'
+                            }}
+                        primary={item.label}
+                    />
                 </ListItemButton>
             </ListItem>
         </React.Fragment>

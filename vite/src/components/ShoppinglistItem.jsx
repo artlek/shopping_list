@@ -107,7 +107,19 @@ export default function ShoppinglistItem({ list, setLocalStorageUuidList }) {
 
     return(
         <>
-            <ListItem sx={{ my: 1, p: 0, pr: 1, display: 'flex', flexDirection: 'row', minWidth: '180px', bgcolor: 'background.default', borderRadius: 2 }} className="shopping-list-item">
+            <ListItem
+                sx={{
+                    my: 1,
+                    p: 0,
+                    pr: 1,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    minWidth: '180px',
+                    bgcolor: 'background.default',
+                    borderRadius: 2
+                }}
+                className="shopping-list-item"
+            >
                 <ListItemButton 
                     sx={{ 
                         minHeight: '95px',
@@ -164,13 +176,31 @@ export default function ShoppinglistItem({ list, setLocalStorageUuidList }) {
                     onClose={handleCloseListMenu}
                     slotProps={{ list: { 'aria-labelledby': 'list-menu-button' } }}
                 >
-                    <ListMenu handleClickCopy={handleClickCopy} handleClickShare={handleClickShare} handleClickDelete={handleClickDelete} />
+                    <ListMenu
+                        handleClickCopy={handleClickCopy}
+                        handleClickShare={handleClickShare}
+                        handleClickDelete={handleClickDelete}
+                    />
                 </Menu>
 
             </ListItem>
 
-            <Snackbar open={openCopySnackbar} autoHideDuration={2500} onClose={handleCloseCopySnackbar} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
-                <Alert onClose={handleCloseCopySnackbar} severity="success" variant="filled">Link to shopping list was copied to clipboard.</Alert>
+            <Snackbar
+                open={openCopySnackbar}
+                autoHideDuration={2500}
+                onClose={handleCloseCopySnackbar}
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center'
+                }}
+            >
+                <Alert
+                    onClose={handleCloseCopySnackbar}
+                    severity="success"
+                    variant="filled"
+                >
+                    Link to shopping list was copied to clipboard.
+                </Alert>
             </Snackbar>
 
             <DialogBox 
@@ -183,9 +213,34 @@ export default function ShoppinglistItem({ list, setLocalStorageUuidList }) {
                 title={list.name} 
                 content="Are you sure you want to delete the shopping list?" 
                 actions={
-                    <Box width="100%" sx={{ gap: 1, display: 'flex' }}>
-                        <Button sx={{ flexGrow: 1 }} variant="outlined" size="large" onClick={handleCloseDeleteDialog}>Cancel</Button>
-                        <Button sx={{ flexGrow: 1 }} variant="contained" size="large" onClick={handleDelete} color="error">Delete</Button>
+                    <Box
+                        width="100%"
+                        sx={{
+                            gap: 1,
+                            display: 'flex'
+                        }}
+                    >
+                        <Button
+                            sx={{
+                                flexGrow: 1
+                            }}
+                            variant="outlined"
+                            size="large"
+                            onClick={handleCloseDeleteDialog}
+                        >
+                            Cancel
+                        </Button>
+                        <Button
+                            sx={{
+                                flexGrow: 1
+                            }}
+                            variant="contained"
+                            size="large"
+                            onClick={handleDelete}
+                            color="error"
+                        >
+                            Delete
+                        </Button>
                     </Box>
                 }
                 open={openDeleteDialog} 

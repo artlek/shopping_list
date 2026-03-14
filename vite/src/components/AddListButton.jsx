@@ -10,9 +10,28 @@ export function AddListButton() {
     };
 
     return(
-        <Box sx={{ '& > :not(style)': { m: 1 }, position: 'fixed', right: '40px', bottom: '40px' }} className="add-list-button">
-            <Fab color="primary" sx={{ borderRadius: '8px', width: '60px', height: '60px' }} onClick={handleClick}>
-                <AddIcon sx={{ fontSize: '50px' }} />
+        <Box
+            sx={{ 
+                '& > :not(style)': { m: 1 },
+                position: 'fixed',
+                right: '40px',
+                bottom: '40px'
+            }}
+            className="add-list-button">
+            <Fab
+                color="primary"
+                    sx={{
+                        borderRadius: '8px',
+                        width: '60px',
+                        height: '60px'
+                    }}
+                onClick={handleClick}
+            >
+                <AddIcon
+                    sx={{
+                        fontSize: '50px'
+                    }}
+                />
             </Fab>
         </Box>
     );

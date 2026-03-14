@@ -14,7 +14,7 @@ export default function Header({ header }) {
             ml={1} 
             variant="h1"
             className="header"
-            >
+        >
             {header}
         </Typography>
     );

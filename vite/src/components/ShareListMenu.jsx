@@ -36,12 +36,22 @@ export default function ShareListMenu({ url, onClick }) {
     
     const shareList = shareListItems.map((item) =>
         <React.Fragment key={item.id}>
-            <ListItem disablePadding component="a" rel="noreferrer" href={item.href} onClick={()=>onClick()}>
+            <ListItem
+                disablePadding
+                component="a"
+                rel="noreferrer"
+                href={item.href}
+                onClick={()=>onClick()}>
                 <ListItemButton>
                     <ListItemIcon>
                         {item.icon}
                     </ListItemIcon>
-                    <ListItemText sx={{ color: 'text.primary' }} disableTypography primary={item.label} />
+                    <ListItemText
+                        sx={{
+                            color: 'text.primary'
+                        }}
+                    disableTypography
+                    primary={item.label} />
                 </ListItemButton>
             </ListItem>
         </React.Fragment>

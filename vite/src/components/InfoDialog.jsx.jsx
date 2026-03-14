@@ -22,7 +22,13 @@ export default function InfoDialog({ message, title,openInfoDialog, handleCloseI
                 onClose={handleCloseInfoDialog}
                 aria-labelledby="info-dialog-title"
             >
-                <DialogTitle id="info-dialog-title" sx={{ display: 'flex', alignItems: 'center' }}>
+                <DialogTitle
+                    id="info-dialog-title"
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'center'
+                    }}
+                >
                     {title}
                 </DialogTitle>
                 <DialogContent>
@@ -30,8 +36,15 @@ export default function InfoDialog({ message, title,openInfoDialog, handleCloseI
                     {message}
                 </DialogContentText>
                 </DialogContent>
-                <DialogActions sx={{ p: 2 }}>
-                <Button variant='contained' onClick={handleCloseInfoDialog}>
+                <DialogActions
+                    sx={{
+                        p: 2
+                    }}
+                >
+                <Button
+                    variant='contained'
+                    onClick={handleCloseInfoDialog}
+                >
                     Ok
                 </Button>
                 </DialogActions>

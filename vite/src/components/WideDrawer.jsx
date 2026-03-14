@@ -5,7 +5,13 @@ export default function WideDrawer({ children, drawerWidth }) {
         <Drawer 
             sx={{
                 display: { xs: 'none', sm: 'block' },
-                '& .MuiDrawer-paper': { border: 'none', boxSizing: 'border-box', width: drawerWidth, position: 'static', bgcolor: 'background.default' },
+                '& .MuiDrawer-paper': {
+                    border: 'none',
+                    boxSizing: 'border-box',
+                    width: drawerWidth,
+                    position: 'static',
+                    bgcolor: 'background.default'
+                },
             }}
             variant="permanent"
             open

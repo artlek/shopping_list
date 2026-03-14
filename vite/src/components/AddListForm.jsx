@@ -80,8 +80,18 @@ export function AddListForm({ handleClose, setIsLoading }) {
     });
 
     return (
-        <Box component="form" sx={{ width: { md: '75%' } }} onSubmit={formik.handleSubmit} className="add-list-form">
-            <NotificationBar severity="error" display={error ? null : 'none'}>
+        <Box
+            component="form"
+            sx={{
+                width: { md: '75%' }
+            }}
+            onSubmit={formik.handleSubmit}
+            className="add-list-form"
+        >
+            <NotificationBar
+                severity="error"
+                display={error ? null : 'none'}
+            >
                {error}
             </NotificationBar>
             <TextField
@@ -97,7 +107,9 @@ export function AddListForm({ handleClose, setIsLoading }) {
                 helperText={formik.touched.name && formik.errors.name ? formik.errors.name : ' '}
             />
             <TextField 
-                sx={{ my: 1 }}
+                sx={{
+                    my: 1
+                }}
                 size="small"
                 fullWidth
                 id="description"

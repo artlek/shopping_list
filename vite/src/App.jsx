@@ -61,18 +61,45 @@ export default function App() {
     return(
         <React.Fragment>
             <CssBaseline />
-            {!localStorageUserName ? <AddUserNameForm setLocalStorageUserName={setLocalStorageUserName} />
+            {!localStorageUserName ? <AddUserNameForm
+                setLocalStorageUserName={setLocalStorageUserName}
+            />
             :
                 <Box>
-                    <InfoDialog title={[updateEmoji, 'New version available!']} message={[updateMessage, updateLink, '.']} handleCloseInfoDialog={handleCloseInfoDialog} setOpenInfoDialog={setOpenInfoDialog} openInfoDialog={openInfoDialog} />
-                    <Box sx={{ display: 'flex' }}>
-
-                        <IconButton aria-label="open drawer" onClick={()=>setMobileOpen(true)}
-                            sx={{ zIndex: 1191, m: 2, position: 'absolute', top: { sm: 30, xs: topBarHeight }, right: 0, display: { sm: 'none' } }}
+                    <InfoDialog
+                        title={[updateEmoji, 'New version available!']}
+                        message={[updateMessage, updateLink, '.']}
+                        handleCloseInfoDialog={handleCloseInfoDialog}
+                        setOpenInfoDialog={setOpenInfoDialog}
+                        openInfoDialog={openInfoDialog}
+                    />
+                    <Box
+                        sx={{
+                            display: 'flex'
+                        }}
+                    >
+                        <IconButton
+                            aria-label="open drawer"
+                            onClick={()=>setMobileOpen(true)}
+                            sx={{
+                                zIndex: 1191,
+                                m: 2,
+                                position: 'absolute',
+                                top: { sm: 30, xs: topBarHeight },
+                                right: 0,
+                                display: { sm: 'none' }
+                            }}
                         >
-                            <MenuIcon sx={{ fontSize: '32px', color: 'text.secondary' }} />
+                            <MenuIcon
+                                sx={{
+                                    fontSize: '32px',
+                                    color: 'text.secondary'
+                                }}
+                            />
                         </IconButton>
-                        <Navigation width={DRAWER_WIDTH}>
+                        <Navigation
+                            width={DRAWER_WIDTH}
+                        >
                             <MobileDrawer
                                 variant="temporary" 
                                 drawerWidth={DRAWER_WIDTH}
@@ -81,13 +108,21 @@ export default function App() {
                                 handleDrawerClose={handleDrawerClose}
                                 topBarHeight={topBarHeight}
                             >
-                                <AsideMenu handleDrawerClose={handleDrawerClose} />
+                                <AsideMenu
+                                    handleDrawerClose={handleDrawerClose}
+                                />
                             </MobileDrawer>
-                            <WideDrawer drawerWidth={DRAWER_WIDTH}>
-                                <AsideMenu handleDrawerClose={handleDrawerClose} />
+                            <WideDrawer
+                                drawerWidth={DRAWER_WIDTH}
+                            >
+                                <AsideMenu
+                                    handleDrawerClose={handleDrawerClose}
+                                />
                             </WideDrawer>
                         </Navigation>
-                        <Main topBarHeight={topBarHeight}>
+                        <Main
+                            topBarHeight={topBarHeight}
+                        >
                             <Routes>
                                 <Route path="/" element={<HomePage />} />
                                 <Route path="lists" element={<ShoppinglistsPage />} />

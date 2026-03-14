@@ -18,29 +18,63 @@ export default function DialogBox({ title, content, actions, open, onClose }) {
     return(
         <React.Fragment>
             <Dialog 
-                sx={{ '.MuiPaper-root': { p: 2, width: '500px', bgcolor: 'background.default' } }}
+                sx={{
+                    '.MuiPaper-root': {
+                        p: 2,
+                        width: '500px',
+                        bgcolor: 'background.default'
+                    }
+                }}
                 fullScreen={fullScreen}
                 open={open}
                 onClose={()=>onClose()}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle component="span" display="flex" flexDirection="row" alignItems="flex-start" id="alert-dialog-title">
-                    <Typography component="h2" flexGrow="1" fontWeight="bold" fontSize="1.8rem" color="text.secondary">
+                <DialogTitle
+                    component="span"
+                    display="flex"
+                    flexDirection="row"
+                    alignItems="flex-start"
+                    id="alert-dialog-title"
+                >
+                    <Typography
+                        component="h2"
+                        flexGrow="1"
+                        fontWeight="bold"
+                        fontSize="1.8rem"
+                        color="text.secondary"
+                    >
                         {title}
                     </Typography>
-                    <IconButton sx={{ ml: 1 }} onClick={()=>onClose()}>
+                    <IconButton
+                        sx={{
+                            ml: 1
+                        }}
+                        onClick={()=>onClose()}
+                    >
                         <CloseIcon />
                     </IconButton>
                 </DialogTitle>
                 <DialogContent>
-                    <DialogContentText component="div" id="alert-dialog-description">
-                        <Typography component="div" fontSize="1.1rem" pt={3}>
+                    <DialogContentText
+                        component="div"
+                        id="alert-dialog-description"
+                    >
+                        <Typography
+                            component="div"
+                            fontSize="1.1rem"
+                            pt={3}
+                        >
                             {content}
                         </Typography>
                     </DialogContentText>
                 </DialogContent>
-                <DialogActions sx={{ px: 2 }}>
+                <DialogActions
+                    sx={{
+                        px: 2
+                    }}
+                    >
                     {actions}
                 </DialogActions>
             </Dialog>

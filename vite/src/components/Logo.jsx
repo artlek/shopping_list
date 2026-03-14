@@ -11,8 +11,24 @@ export function Logo({ firstColor='background.none', secondColor='primary.light'
             }}
             className="logo"
         >
-            <Typography component="span" letterSpacing="3px" fontSize={fontSize} fontWeight="300" color={firstColor}>shopping</Typography>
-            <Typography component="span" letterSpacing="3px" fontSize={fontSize} fontWeight="800" color={secondColor}>list</Typography>
+            <Typography
+                component="span"
+                letterSpacing="3px"
+                fontSize={fontSize}
+                fontWeight="300"
+                color={firstColor}
+            >
+                shopping
+            </Typography>
+            <Typography
+                component="span"
+                letterSpacing="3px"
+                fontSize={fontSize}
+                fontWeight="800"
+                color={secondColor}
+            >
+                list
+            </Typography>
         </Box>
     )
 }

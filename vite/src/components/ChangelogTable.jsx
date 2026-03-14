@@ -22,7 +22,13 @@ export function ChangelogTable() {
 
     return(
         <React.Fragment>
-            <TableContainer sx={{ borderRadius: 0, mb: 3 }} elevation={0} className="app-info-table">
+            <TableContainer
+                sx={{
+                    borderRadius: 0,
+                    mb: 3
+                }}
+                    elevation={0}
+                    className="app-info-table">
                 <Table>
                     <TableBody>
                         {releases.map((release) => 
@@ -37,10 +43,20 @@ export function ChangelogTable() {
                                         width: '200px'
                                     }}>
                                     <Box>
-                                        <Box component="span" fontWeight="600">Version: {release.version}</Box>
+                                        <Box
+                                            component="span"
+                                            fontWeight="600"
+                                        >
+                                            Version: {release.version}
+                                        </Box>
                                     </Box>
                                     <Box>
-                                        <Box component="span" fontWeight="400">Released: {release.released}</Box>
+                                        <Box
+                                            component="span"
+                                            fontWeight="400"
+                                        >
+                                            Released: {release.released}
+                                        </Box>
                                     </Box>
                                 </TableCell>
                                 <TableCell 

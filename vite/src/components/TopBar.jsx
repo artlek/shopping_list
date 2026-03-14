@@ -5,7 +5,11 @@ export default function TopBar({ children, color='warning', onClose={onClose} })
     const topBarHeightValue = useContext(TopBarHeight);
 
     return(
-        <Alert icon={false} color={color} variant="filled" className="top-bar"
+        <Alert
+            icon={false}
+            color={color}
+            variant="filled"
+            className="top-bar"
             sx={{ 
                 position: 'fixed',
                 left: 0,
@@ -27,7 +31,8 @@ export default function TopBar({ children, color='warning', onClose={onClose} })
                     WebkitLineClamp: '1',
                     WebkitBoxOrient: 'vertical'
                  }} 
-                variant='caption'>
+                variant='caption'
+            >
                 {children}
             </Typography>
         </Alert>

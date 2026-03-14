@@ -11,12 +11,24 @@ export function AppInfoTable() {
         border: '1px solid',
         borderColor: 'secondary.light',
     }
-    const headStyle = {...cellStyle, fontWeight: 600, color: 'text.primary', width: '200px' };
+    const headStyle = {
+        ...cellStyle,
+        fontWeight: 600,
+        color: 'text.primary',
+        width: '200px'
+    };
     const appVersion = GetAppVersion();
 
     return(
         <React.Fragment>
-            <TableContainer sx={{ borderRadius: 0, mb: 3 }} elevation={0} className="app-info-table">
+            <TableContainer
+                sx={{
+                    borderRadius: 0,
+                    mb: 3
+                }}
+                elevation={0}
+                className="app-info-table"
+            >
                 <Table>
                     <TableBody>
                         <TableRow>

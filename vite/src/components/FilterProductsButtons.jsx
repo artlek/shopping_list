@@ -47,7 +47,12 @@ export function FilterProductsButtons({ products, setProductItems }){
     );
 
     return(
-        <Stack px={1} direction="row" spacing={1} className="filter-products-buttons">
+        <Stack
+            px={1}
+            direction="row"
+            spacing={1}
+            className="filter-products-buttons"
+        >
             {buttons}
         </Stack>
     );

@@ -31,14 +31,30 @@ export function AddUserNameForm({ setLocalStorageUserName }) {
     });
 
     return (
-        <Box sx={{ width: '100%', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', pt: '10vh', px: '20px' }}
+        <Box
+            sx={{
+                width: '100%',
+                height: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                pt: '10vh',
+                px: '20px'
+            }}
             bgcolor="background.default"
             className="add-user-name-form"
         >
-            <Logo firstColor="text.secondary" />
-            <form onSubmit={formik.handleSubmit} >
+            <Logo
+                firstColor="text.secondary"
+            />
+            <form
+                onSubmit={formik.handleSubmit}
+            >
                 <TextField
-                    sx={{ '.MuiInputBase-input': {bgcolor: '#ffffff'}, pt: 5 }}
+                    sx={{
+                        '.MuiInputBase-input': {bgcolor: '#ffffff'},
+                        pt: 5
+                    }}
                     placeholder="Enter your name"
                     fullWidth
                     id="userName"
@@ -49,7 +65,18 @@ export function AddUserNameForm({ setLocalStorageUserName }) {
                     error={formik.touched.userName && Boolean(formik.errors.userName)}
                     helperText={formik.touched.userName && formik.errors.userName ? formik.errors.userName : ' '}
                 />
-                <Button type="submit" fullWidth variant="button" sx={{ bgcolor: 'primary.main', p: 1.6, my: 1 }}>Let's start!</Button>
+                <Button
+                    type="submit"
+                    fullWidth
+                    variant="button"
+                    sx={{
+                        bgcolor: 'primary.main',
+                        p: 1.6,
+                        my: 1
+                    }}
+                >
+                    Let's start!
+                </Button>
             </form>
         </Box>   
     );

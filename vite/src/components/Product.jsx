@@ -48,17 +48,58 @@ export default function Product({ product, setDependence }) {
 
     return(
         <>
-            <ListItem disablePadding sx={{ my: 1, py: 1, bgcolor: 'background.default', borderRadius: 2 }} className="product">
-                <ProductItemContent flexGrow="1" minHeight="68px" alignContent="center" px={2}>
-                    <ProductItemFirstLine style={style}>{product.name}</ProductItemFirstLine>
-                    <ProductItemSecondLine style={style}>{product.description}</ProductItemSecondLine>
-                    <ProductItemThirdLine style={style}>{product.user ? product.user : null}&nbsp;|&nbsp;{dayjs(date).fromNow()}</ProductItemThirdLine>
+            <ListItem
+                disablePadding
+                sx={{
+                    my: 1,
+                    py: 1,
+                    bgcolor: 'background.default',
+                    borderRadius: 2
+                }}
+                className="product"
+            >
+                <ProductItemContent
+                    flexGrow="1"
+                    minHeight="68px"
+                    alignContent="center"
+                    px={2}
+                >
+                    <ProductItemFirstLine
+                        style={style}
+                    >
+                        {product.name}
+                    </ProductItemFirstLine>
+                    <ProductItemSecondLine
+                        style={style}
+                    >
+                        {product.description}
+                    </ProductItemSecondLine>
+                    <ProductItemThirdLine
+                        style={style}
+                    >
+                        {product.user ? product.user : null}&nbsp;|&nbsp;{dayjs(date).fromNow()}
+                    </ProductItemThirdLine>
                 </ProductItemContent>
                 <ProductItemMenu>
-                    <IconButton onClick={()=>onClickDeleteProduct()} loading={isDeleteLoading} sx={{ mr: 0.5 }} edge="end">
+                    <IconButton
+                        onClick={()=>onClickDeleteProduct()}
+                        loading={isDeleteLoading}
+                        sx={{
+                            mr: 0.5
+                        }}
+                        edge="end"
+                    >
                         <DeleteOutlineIcon />
                     </IconButton>
-                    <IconButton color={product.bought ? 'success' : ''} onClick={()=>onClickEditProduct()} loading={isBoughtLoading} sx={{ mr: 1 }} edge="end">
+                    <IconButton
+                        color={product.bought ? 'success' : ''}
+                        onClick={()=>onClickEditProduct()}
+                        loading={isBoughtLoading}
+                        sx={{
+                            mr: 1
+                        }}
+                        edge="end"
+                    >
                         {product.bought ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
                     </IconButton>
                 </ProductItemMenu>
