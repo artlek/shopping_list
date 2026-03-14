@@ -21,12 +21,6 @@ import MobileDrawer from './components/MobileDrawer';
 import WideDrawer from './components/WideDrawer';
 import Navigation from './components/Navigation';
 import Main from './components/Main';
-<<<<<<< HEAD
-import { Alert, Typography } from '@mui/material';
-
-export default function App() {
-    const [localStorageUserName, setLocalStorageUserName] = useState(GetUserName());
-=======
 import InfoDialog from './components/InfoDialog.jsx';
 import { Link as RouterLink } from 'react-router-dom';
 import Link from '@mui/material/Link';
@@ -34,7 +28,6 @@ import Link from '@mui/material/Link';
 export default function App() {
     const [localStorageUserName, setLocalStorageUserName] = useState(GetUserName());
     const [openInfoDialog, setOpenInfoDialog] = React.useState(false);
->>>>>>> c08c6cc (Add InfoDialog component to inform when new version)
 
     // handles app drawer
     const DRAWER_WIDTH = 260+'px';
@@ -49,21 +42,6 @@ export default function App() {
         setIsClosingDrawer(false);
     };
 
-    // handles actions when app is updated
-<<<<<<< HEAD
-    const updateContent = "The app has been updated to " + GetAppVersion() + " version.";
-    const [openTopBar, setOpenTopBar] = useState(false);
-    const onCloseTopBar = () => {
-        SetUserAppVersion();
-        setTopBarHeight(0);
-        setOpenTopBar(false);
-    }
-    
-    if(CheckIfUpdated()) {
-        useEffect(() => {
-            setTopBarHeight(28);
-            setOpenTopBar(true);
-=======
     const handleCloseInfoDialog = () => {
         setOpenInfoDialog(false);
         SetUserAppVersion();
@@ -74,7 +52,6 @@ export default function App() {
     if(CheckIfUpdated()) {
         useEffect(() => {
             setOpenInfoDialog(true);
->>>>>>> c08c6cc (Add InfoDialog component to inform when new version)
         }, []);
     }
     else {
@@ -87,25 +64,7 @@ export default function App() {
             {!localStorageUserName ? <AddUserNameForm setLocalStorageUserName={setLocalStorageUserName} />
             :
                 <Box>
-<<<<<<< HEAD
-                    {openTopBar && 
-                        <Alert icon={false} color="warning" variant="filled" className="top-bar" onClose={()=>onCloseTopBar()}
-                            sx={{
-                                width: '100%',
-                                height: topBarHeight+'px',
-                                borderRadius: 0,
-                                alignItems: 'center',
-                                '.MuiAlert-message': { overflow: 'hidden'} 
-                            }}
-                        >
-                            <Typography variant='caption'>
-                                {updateContent}
-                            </Typography>
-                        </Alert>
-                    }
-=======
                     <InfoDialog title={[updateEmoji, 'New version available!']} message={[updateMessage, updateLink, '.']} handleCloseInfoDialog={handleCloseInfoDialog} setOpenInfoDialog={setOpenInfoDialog} openInfoDialog={openInfoDialog} />
->>>>>>> c08c6cc (Add InfoDialog component to inform when new version)
                     <Box sx={{ display: 'flex' }}>
 
                         <IconButton aria-label="open drawer" onClick={()=>setMobileOpen(true)}
