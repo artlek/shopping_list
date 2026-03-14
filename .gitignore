@@ -10,3 +10,5 @@
 ###< symfony/framework-bundle ###
 
 /database.db
+.env
+.env.production
