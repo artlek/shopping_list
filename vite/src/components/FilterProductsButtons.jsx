@@ -1,8 +1,10 @@
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
 import { useState, useEffect } from "react";
+import DeleteBoughtProductsButton from './DeleteBoughtProductsButton';
 
-export function FilterProductsButtons({ products, setProductItems }){
+export function FilterProductsButtons({ products, setProductItems, listUuid, setDependence }){
     const [productFilterCondition, setProductFilterCondition] = useState('all');
     const handleProductFilterCondition = (newValue) => {
         setProductFilterCondition(newValue);
@@ -25,7 +27,7 @@ export function FilterProductsButtons({ products, setProductItems }){
         }
     }, [productFilterCondition, products]);
 
-    const buttons = productFilterConditions.map((condition) => 
+    const filterButtons = productFilterConditions.map((condition) => 
         <Chip 
             sx={{
                 borderWidth: 0,
@@ -46,14 +48,29 @@ export function FilterProductsButtons({ products, setProductItems }){
         />
     );
 
+    const boughtProductsCount = products.filter((item) => item.props.product.bought).length;
+
     return(
-        <Stack
-            px={1}
-            direction="row"
-            spacing={1}
-            className="filter-products-buttons"
-        >
-            {buttons}
-        </Stack>
-    );
+        <>
+            <Stack
+                px={1}
+                direction="row"
+                spacing={1}
+                className="filter-products-buttons"
+            >
+                {filterButtons}
+            </Stack>
+            <Stack 
+                direction="row"
+                alignItems="center"
+                justifyContent="flex-end"
+                sx={{
+                    m: 1
+                }}>
+                    {listUuid && boughtProductsCount > 0 && productFilterCondition === 'bought' && (
+                        <DeleteBoughtProductsButton listUuid={listUuid} setDependence={setDependence} />
+                )}
+            </Stack>
+        </>
+    )
 }

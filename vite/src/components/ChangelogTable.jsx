@@ -17,6 +17,13 @@ export function ChangelogTable() {
             version: '1.1.0',
             released: '2026-01-02',
             content: 'New dialog has been added informing about the new version of the application'
+        },
+        {
+            version: '1.2.0',
+            released: '2026-03-22',
+            content: [
+                'Delete all bought products button has been added to the app that allows you to delete all products marked as bought.'
+            ]
         }
     ];
 

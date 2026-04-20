@@ -1,0 +1,4 @@
+delete_bought_products:
+    path: /api/products/delete-bought/{listUuid}
+    controller: App\Controller\DeleteBoughtProductsController::deleteBoughtProducts
+    methods: DELETE

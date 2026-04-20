@@ -129,9 +129,15 @@ export function ShoppinglistPage() {
                         </form>
                     </AddProductForm>
                 </AddProductMenu>  
+                
                 {products && products.length > 0 && !listItemError ? (
                     <>
-                        <FilterProductsButtons products={products} setProductItems={setProductItems} />
+                        <FilterProductsButtons 
+                            products={products} 
+                            setProductItems={setProductItems} 
+                            listUuid={params.uuid}
+                            setDependence={setDependence}
+                        />
                         <List sx={{ m: 1 }}>
                             {productItems}
                         </List>

@@ -16,6 +16,20 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
+    /**
+     * Find all bought products for a specific shopping list
+     */
+    public function findBoughtProductsByListUuid(string $listUuid): array
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.listUuid = :listUuid')
+            ->andWhere('p.bought = :bought')
+            ->setParameter('listUuid', $listUuid)
+            ->setParameter('bought', true)
+            ->getQuery()
+            ->getResult();
+    }
+
     //    /**
     //     * @return Product[] Returns an array of Product objects
     //     */
